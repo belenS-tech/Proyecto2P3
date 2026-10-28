@@ -1,0 +1,11 @@
+Cambios de ID para conservar reservas duplicadas:
+Reserva #3: 12 -> RES-MIG-000003 (reunion, 2026-09-07)
+Reserva #4: 11 -> RES-MIG-000004 (2ee, 2026-09-07)
+
+Registros importados:
+usuarios: 4
+funcionarios: 3
+categorias: 5
+recursos: 4
+reservas: 5
+detalles: 6

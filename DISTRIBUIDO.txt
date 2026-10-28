@@ -1,0 +1,86 @@
+EJECUTAR EL PROYECTO 2
+=====================
+Se mantiene Oracle XE por indicación del profesor (sustituye MySQL del PDF).
+Requiere JDK 21 y Maven; proyecto.ps1 detecta el JDK 21 local y Maven de IntelliJ.
+
+1. Abrir dos terminales PowerShell en la carpeta que contiene pom.xml.
+2. En la primera, iniciar el backend y dejarlo corriendo:
+   powershell -ExecutionPolicy Bypass -File .\proyecto.ps1 servidor
+3. En la segunda, iniciar una ventana cliente:
+   powershell -ExecutionPolicy Bypass -File .\proyecto.ps1 cliente
+4. Se pueden abrir más clientes repitiendo el paso 3 en otra terminal.
+
+En IntelliJ: ejecutar primero server.BackendMain y luego Main.
+Para varios clientes, habilitar múltiples instancias de la configuración Main.
+El backend es un proceso de consola, sin ventanas. Sólo él accede a Oracle.
+database.properties y la configuración Oracle existentes se usan en el backend.
+El backend busca ese archivo primero en la carpeta de trabajo y después junto
+al JAR o en la raíz del módulo compilado, para admitir el arranque desde IntelliJ
+con la carpeta exterior abierta. -Ddb.config=RUTA tiene prioridad si se especifica.
+No vuelva a instalar/importar la base para iniciar normalmente el sistema.
+
+OTRAS COMPUTADORAS
+En la computadora con Oracle, ejecutar el backend. Por defecto escucha en todas
+las interfaces (0.0.0.0), puerto 5050. Permitir ese puerto TCP en el firewall de la
+red del curso. No es necesario abrir el puerto de Oracle a los clientes.
+En cada otra computadora:
+   powershell -ExecutionPolicy Bypass -File .\proyecto.ps1 cliente -Servidor 192.168.1.10
+Reemplazar esa IP por la dirección real del equipo servidor.
+Con IntelliJ usar opciones de VM: -Dserver.host=192.168.1.10 -Dserver.port=5050
+El puerto puede cambiarse con -Puerto en ambos comandos.
+
+ESTRUCTURA PARA EXPLICAR EL PROYECTO
+- api: contratos compartidos de los servicios.
+- client.ServiceProxy: patrón Proxy dinámico; representa cada servicio remoto.
+- client.Services: composición del frontend, sin referencias a JDBC ni Oracle.
+- network.Protocol: peticiones/respuestas correlacionadas y alertas por socket.
+- server.BackendServer: conexiones concurrentes, sesión independiente por socket,
+  validación de permisos y notificaciones a otros usuarios conectados.
+- server.BackendMain: construye servicios de negocio y repositorios Oracle.
+- service: validaciones, disponibilidad, calendarización, actividades y estadísticas.
+- repository/database: persistencia exclusiva del backend.
+- controller/view: presentación Swing; recibe DTO y usa contratos de api.
+
+El cliente mantiene un hilo receptor para respuestas y alertas. Las actualizaciones
+de las alertas se despachan al hilo de Swing. El servidor utiliza hilos virtuales
+de Java 21 por cliente y una cola de salida independiente para cada conexión.
+Las escrituras se coordinan para asignar IDs y validar operaciones concurrentes;
+Oracle conserva sus transacciones y bloqueos de disponibilidad.
+El backend reutiliza hasta cuatro conexiones Oracle mediante un pool; las
+consultas anidadas de un mismo hilo comparten su conexión y transacción.
+
+ALERTAS
+Ingresar en dos clientes con usuarios distintos. Crear una reserva válida desde
+un funcionario. El otro usuario autenticado recibe la alerta a la derecha,
+independientemente de la pestaña seleccionada. No se notifica al autor ni a otra
+conexión del mismo usuario. Ver alerta muestra todos sus detalles. Descartar pide
+confirmación y sólo retira el aviso local: la reserva permanece en Oracle.
+Las alertas son informativas y duran la sesión; no se recuperan alertas históricas.
+Cerrar sesión elimina la suscripción y la siguiente sesión empieza sin alertas.
+
+PRUEBAS Y ENTREGA
+   powershell -ExecutionPolicy Bypass -File .\proyecto.ps1 pruebas
+Ejecuta JUnit con Surefire y Failsafe, incluidas las pruebas contra Oracle real.
+Para pruebas sin Oracle: mvn verify (las pruebas Oracle quedan omitidas).
+SocketServicesIT abre sockets locales reales y verifica sesiones, claves,
+permisos, concurrencia, IDs, matrices, estadísticas, errores y notificaciones.
+Las pruebas Oracle crean registros IT aislados y los limpian al terminar.
+ProcesosOracleIT inicia el JAR backend y clientes del JAR frontend en JVM
+separadas. Comprueba concurrencia, ausencia de persistencia en el frontend,
+alertas Swing, descarte local, cierre de sesión y persistencia tras reiniciar.
+Las confirmaciones modales se sustituyen por respuestas controladas en las
+pruebas; los controladores y botones ejecutan su flujo real.
+
+   powershell -ExecutionPolicy Bypass -File .\proyecto.ps1 compilar
+Produce JAR general y JAR separados con sufijos frontend y backend en target/.
+El JAR frontend excluye repositorios, acceso a base de datos y servicios reales.
+Los JAR no incluyen dependencias; para ejecutar desde las fuentes usar los comandos
+anteriores. Las fuentes necesarias son pom.xml, src/, proyecto.ps1,
+database/ (scripts SQL y migración) y estas instrucciones. No compartir target/,
+database.properties, claves API ni archivos del IDE. No se ha publicado la
+versión corregida en GitHub. No se genera ZIP por solicitud de la usuaria.
+
+Si se pierde la conexión: cerrar y abrir el cliente para iniciar otra conexión.
+Antes de repetir una escritura cuyo resultado sea incierto, consultar las reservas
+para comprobar si quedó guardada. No se reintentan automáticamente escrituras.
+La función IA mantiene GEMINI_API_KEY en el backend; no se comparte con clientes.

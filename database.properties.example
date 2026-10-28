@@ -1,0 +1,5 @@
+# Copiar como database.properties en la carpeta del pom.xml.
+# Nombre de servicio XE (Oracle Express 11g instalado en este equipo).
+db.url=jdbc:oracle:thin:@//localhost:1521/XE
+db.user=system
+db.password=CAMBIAR_LOCALMENTE

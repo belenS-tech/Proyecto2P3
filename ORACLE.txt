@@ -1,0 +1,89 @@
+MIGRACIÓN DEL PROYECTO A ORACLE
+
+Proyecto: abrir en IntelliJ la carpeta que contiene este archivo y pom.xml.
+Usar JDK 21 y recargar el proyecto Maven para obtener el controlador JDBC.
+
+EN ESTE EQUIPO
+La conexión encontrada es Oracle Express 11g, host localhost, puerto 1521,
+servicio XE, usuario system. La contraseña está únicamente en el archivo
+local database.properties, excluido de Git. No se debe compartir ese archivo.
+El nombre Proyecto2 en SQL Developer es una etiqueta, no el nombre del servicio.
+
+Para ver las tablas en SQL Developer, conectar con esos datos, actualizar
+Tablas (clic derecho > Refrescar) y buscar P3_USUARIOS, P3_FUNCIONARIOS,
+P3_CATEGORIAS, P3_RECURSOS, P3_RESERVAS y P3_DETALLES.
+Si aparece “Tablas (Filtrado)”, revisar el filtro para que muestre P3_.
+
+ARRANCAR
+Ejecutar primero server.BackendMain y después Main en IntelliJ, con el directorio
+de trabajo configurado en esta carpeta (la del pom.xml). Ver DISTRIBUIDO.txt para
+la arquitectura de sockets, las alertas y la ejecución en varias computadoras.
+Se conservan los usuarios de la aplicación. Administrador: admin / admin.
+La cuenta de la aplicación es independiente de la cuenta system de Oracle.
+
+Desde PowerShell, en esta carpeta:
+  .\proyecto.ps1 servidor
+En otra terminal:
+  .\proyecto.ps1 iniciar
+  .\proyecto.ps1 verificar
+  .\proyecto.ps1 pruebas
+
+El script busca Java 21 en .jdks y Maven incluido con IntelliJ.
+Si PowerShell bloquea scripts, usar IntelliJ o ejecutar desde PowerShell:
+  powershell -ExecutionPolicy Bypass -File .\proyecto.ps1 verificar
+Esto aplica solo a ese proceso, sin cambiar la configuración permanente.
+
+Con Maven y JAVA_HOME configurados también se puede usar:
+  mvn compile exec:java -Dexec.mainClass=server.BackendMain
+En otra terminal:
+  mvn compile exec:java
+  mvn compile exec:java -Dexec.mainClass=database.OracleSetup -Dexec.args=check
+  mvn verify -Doracle.it=true
+
+INSTALACIÓN EN OTRO EQUIPO O ESQUEMA VACÍO
+1. Crear una conexión Oracle y copiar database.properties.example como
+   database.properties, completando la URL, usuario y contraseña locales.
+   También se admiten DB_URL, DB_USER y DB_PASSWORD, o propiedades Java
+   db.url, db.user y db.password. Orden: propiedades Java > entorno > archivo.
+   Para usar un archivo en otra ubicación: -Ddb.config=RUTA.
+2. Ejecutar .\proyecto.ps1 instalar. Se cancela si existe alguna de las seis
+   tablas para evitar sobrescribir datos. No ejecutar nuevamente aquí.
+3. Alternativa: abrir database/01_schema.sql en SQL Developer y ejecutar F5;
+   luego database/02_datos_xml.sql y ejecutar F5. La importación es inicial,
+   se ejecuta una sola vez y no combina datos con una instalación existente.
+   Ante un error, detenerse y revisarlo: Oracle confirma DDL implícitamente,
+   por lo que una creación interrumpida puede dejar tablas parciales.
+4. Iniciar server.BackendMain y después Main.java.
+
+DATOS MIGRADOS
+4 usuarios, 3 funcionarios, 5 categorías, 4 recursos, 5 reservas, 6 detalles.
+El XML original contiene reservas con IDs 11 y 12 repetidos. Se conserva
+la primera de cada ID y se asignan RES-MIG-000003 y RES-MIG-000004 a las
+repetidas. El detalle está en database/migracion_ids.txt.
+Los XML originales se mantienen como respaldo. La aplicación usa JDBC,
+incluidos reportes, calendario, estadísticas y las categorías usadas por IA.
+Las clases XML se conservan para sus pruebas y para consultar el formato viejo.
+database/exportar_xml.py regenera la importación desde resources/data;
+regenerar ese archivo no sincroniza datos automáticamente con Oracle.
+
+INTEGRIDAD Y PRUEBAS
+Las consultas usan parámetros. Reservas y detalles se guardan en una sola
+transacción. La creación/eliminación de funcionarios y eliminación de
+categorías agrupan sus cambios para revertir todo si ocurre un error.
+Las claves foráneas evitan referencias huérfanas y el bloqueo de recursos
+previene cruces de reservas activas al escribir desde conexiones distintas.
+Las pruebas Oracle usan IDs IT- aleatorios y eliminan sus datos al terminar.
+Las pruebas antiguas de XML conservan y restauran sus archivos.
+Las claves de usuarios conservan el formato original del proyecto.
+
+ALCANCE
+Este cambio migra la persistencia a Oracle según la indicación del profesor.
+La presentación Swing se conecta por sockets y Proxy al backend independiente.
+El backend concentra JDBC, Oracle, permisos y alertas asíncronas. El cliente
+frontend no contiene las clases de persistencia ni el servidor.
+ProcesosOracleIT prueba clientes y backend en JVM separadas, concurrencia y
+persistencia después de reiniciar el backend, usando Oracle real.
+
+Referencia del controlador y formatos de conexión:
+https://www.oracle.com/database/technologies/faq-jdbc.html
+https://docs.oracle.com/en/database/oracle/oracle-database/19/jjdbc/data-sources-and-URLs.html

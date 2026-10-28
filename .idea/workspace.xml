@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="86be5f71-3007-48e2-996e-8619840cfc77" name="Changes" comment="cambios en carpetas" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="196" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;belenS-tech&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/belenS-tech/Proyecto2P3.git",
+    "accountId": "9fc97eb9-5b32-480c-8301-2c906bda3d6d"
+  }
+}]]></component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0000248291325131" />
+      <entry key="MS500" value="1.1970869604506431" />
+      <entry key="S2" value="3.0530738435149662" />
+      <entry key="S5" value="5.347119988565189" />
+      <entry key="S10" value="6.828547506781406" />
+      <entry key="S30" value="8.179766732226028" />
+      <entry key="S60" value="8.576320662792098" />
+      <entry key="M2" value="8.784643990308172" />
+      <entry key="M5" value="8.912997022340925" />
+      <entry key="M10" value="8.956353670208246" />
+      <entry key="M15" value="8.970870154451486" />
+      <entry key="M30" value="8.985418904595011" />
+      <entry key="H1" value="8.992705404171723" />
+      <entry key="H2" value="8.9963516894327" />
+      <entry key="H4" value="8.998175591475302" />
+      <entry key="D1" value="8.99969589673358" />
+      <entry key="W1" value="8.999956555814615" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.6198551187361613" />
+      <entry key="MS500" value="1.0276368476238422" />
+      <entry key="S2" value="2.7281904118596083" />
+      <entry key="S5" value="5.054704997023069" />
+      <entry key="S10" value="6.629468065261263" />
+      <entry key="S30" value="8.097385733799875" />
+      <entry key="S60" value="8.53278565977331" />
+      <entry key="M2" value="8.762261272288786" />
+      <entry key="M5" value="8.903892398732847" />
+      <entry key="M10" value="8.951775771689158" />
+      <entry key="M15" value="8.967812511424187" />
+      <entry key="M30" value="8.983887221530143" />
+      <entry key="H1" value="8.991938846084699" />
+      <entry key="H2" value="8.995968231104488" />
+      <entry key="H4" value="8.997983817471754" />
+      <entry key="D1" value="8.999663928170403" />
+      <entry key="W1" value="8.999951988724444" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3KwUeXp28oYyuH3N77EfNclO1id" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BackendMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Belén/Documents/2026/Progra3/Proyecto2P3&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="86be5f71-3007-48e2-996e-8619840cfc77" name="Changes" comment="" />
+      <created>1792468220683</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1792468220683</updated>
+    </task>
+    <task id="LOCAL-00001" summary=",,">
+      <option name="closed" value="true" />
+      <created>1792472359570</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1792472359570</updated>
+    </task>
+    <task id="LOCAL-00002" summary="migracion a oracle">
+      <option name="closed" value="true" />
+      <created>1792474691385</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1792474691386</updated>
+    </task>
+    <task id="LOCAL-00003" summary="cambios y pruebas">
+      <option name="closed" value="true" />
+      <created>1792980358183</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1792980358184</updated>
+    </task>
+    <task id="LOCAL-00004" summary="cambios y pruebas">
+      <option name="closed" value="true" />
+      <created>1792980408287</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1792980408287</updated>
+    </task>
+    <task id="LOCAL-00005" summary="beckend">
+      <option name="closed" value="true" />
+      <created>1793081371963</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1793081371965</updated>
+    </task>
+    <task id="LOCAL-00006" summary="cambios en carpetas">
+      <option name="closed" value="true" />
+      <created>1793167256492</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1793167256493</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value=",," />
+    <MESSAGE value="migracion a oracle" />
+    <MESSAGE value="cambios y pruebas" />
+    <MESSAGE value="beckend" />
+    <MESSAGE value="cambios en carpetas" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambios en carpetas" />
+  </component>
+</project>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<funcionarios>
+    <funcionario>
+        <id>111</id>
+        <nombre>belen</nombre>
+        <telefono>123</telefono>
+    </funcionario>
+    <funcionario>
+        <id>123</id>
+        <nombre>juan</nombre>
+        <telefono>222</telefono>
+    </funcionario>
+    <funcionario>
+        <id>222</id>
+        <nombre>fio</nombre>
+        <telefono>12345</telefono>
+    </funcionario>
+</funcionarios>

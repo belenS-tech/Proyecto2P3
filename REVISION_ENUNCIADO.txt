@@ -1,0 +1,311 @@
+PRUEBAS COMPLEMENTARIAS EJECUTADAS - 23 DE OCTUBRE DE 2026
+=======================================================
+
+Resultado vigente: proyecto.ps1 pruebas -> BUILD SUCCESS.
+133 pruebas aprobadas: 88 unitarias y 45 de integracion; cero fallos, errores
+u omisiones. Oracle se mantiene. Los resultados inferiores son historial.
+
+- ProcesosOracleIT ejecuta el backend y clientes en JVM independientes usando
+  los JAR separados. Comprueba que el frontend no contiene persistencia.
+- Dos clientes solicitan simultaneamente: con dos recursos ambos reservan
+  recursos distintos; con uno disponible solo uno puede reservar.
+- CRUD, cambio de clave, restricciones por rol y rechazo sin guardado parcial.
+- Alertas recibidas por otros usuarios, detalle desde Swing, descarte rechazado
+  y aceptado sin borrar la reserva; nueva sesion sin alertas anteriores.
+- Reinicio real del backend y consulta desde otro proceso: la reserva persiste
+  en Oracle. Cancelacion futura y liberacion del recurso verificadas.
+- Botones Swing de los ocho reportes generan PDF: funcionarios, categorias,
+  recursos, reservas, calendarizacion, actividades y ambas estadisticas.
+  AdministracionMvcTest prueba tambien altas, cambios y confirmacion de bajas.
+- Las pruebas accionan controles reales; sustituyen el selector de archivo y
+  las respuestas de dialogos modales por valores controlados.
+- Prueba adicional con IA real por socket y ReservaController: horario exacto
+  10:45-11:17, categoria seleccionada y formulario editable, sin guardar reserva.
+- Ocho PDF de muestra legibles; matrices de dos paginas y graficos incluidos.
+- Auditoria estatica estricta sin hallazgos y git diff --check sin errores.
+
+LIMITES PENDIENTES
+No se dispone de una segunda computadora fisica para comprobar la red entre
+equipos y su firewall. Las JVM independientes fueron probadas en este equipo.
+GitHub es accesible, pero la rama remota conserva el commit anterior a estas
+correcciones; falta publicar la version actual. No se ha hecho push.
+No se creo ZIP, por solicitud expresa de la usuaria.
+Estos limites impiden certificar una entrega al 100% solo con la suite local.
+
+HISTORIAL ANTERIOR
+
+CORRECCION FINAL DE LOS CUATRO PENDIENTES - 22 DE OCTUBRE DE 2026
+=============================================================
+
+Los cuatro problemas tecnicos enumerados en las revisiones anteriores quedaron
+corregidos. Las secciones inferiores se conservan como historial, no como lista
+de fallos actuales. Oracle se mantiene; no se modifico el esquema de la base.
+
+1. MVC: se extrajeron CalendarizacionRecursosController,
+   ProgramacionActividadesController, EstadisticasRecursosController y
+   EstadisticasActividadesController. EstadisticasActividadesPanel es ahora una
+   vista independiente. Las vistas presentan datos y graficos; no conocen api,
+   client, service ni controller. MainController compone los modulos por rol y
+   administra alertas y cierre. PanelReporte comparte seleccion de archivos.
+2. IA: el selector incorpora el horario exacto cuando no existe entre las opciones.
+   Ya no redondea minutos. Probado el flujo asincrono 10:45-11:17, guardado y
+   seleccion posterior; tambien se conservan segundos si la respuesta los incluye.
+3. Permisos: BackendServer exige administrador para consultas y escrituras de
+   funcionarios y recursos, y para operaciones administrativas de categorias.
+   Listar categorias permanece disponible para ambos roles porque lo requieren
+   reservas y calendarizacion. Probado por TCP y contra Oracle real.
+4. Historial: matrices y estadisticas incluyen ACTIVA y FINALIZADA, excluyendo
+   CANCELADA de forma consistente. Comprobado en memoria, TCP y Oracle.
+
+VERIFICACION FINAL
+- proyecto.ps1 pruebas: BUILD SUCCESS.
+- 85 pruebas unitarias y 44 de integracion: 129 aprobadas, cero fallos, errores
+  u omisiones. Diez casos nuevos frente a la suite anterior de 119.
+- ConsultasMvcTest: seis casos de carga, vacio, fallo/reintento, tabla/grafico y
+  exportacion real de cuatro PDF desde los nuevos controladores.
+- VistasMvcTest: extraccion asincrona con minutos exactos y guardado sin redondeo.
+- CorreccionesEnunciadoTest: coherencia entre historial y estadisticas por estado.
+- SocketServicesIT: consultas administrativas restringidas e historial finalizado.
+- OracleSocketIT: permisos e historial FINALIZADA confirmados en Oracle real.
+- Arranque completo con Proxy: administrador con 6 pestanas y funcionario con 4;
+  alertas presentes, cambio de pestanas y cierre sin excepciones asincronas.
+- Los eventos de refresco pendientes no consultan si el panel dejo de estar visible.
+- Renderizado de las cuatro vistas inspeccionado; auditoria estatica sin hallazgos.
+- JAR frontend con nuevos controladores y vistas, sin database/, repository/ ni
+  server/. git diff --check sin errores.
+
+PENDIENTES EXTERNOS AL CODIGO CORREGIDO
+No se ha probado entre dos computadoras fisicas ni verificado la version completa
+en GitHub o el ZIP final. Esos puntos no se certifican con las pruebas locales.
+
+HISTORIAL DE REVISIONES (HALLAZGOS CORREGIDOS ARRIBA)
+
+REVISION DE LOS DEMAS REQUISITOS - 22 DE OCTUBRE DE 2026
+=====================================================
+
+Se repitio proyecto.ps1 pruebas: BUILD SUCCESS, 77 unitarias y 42 de integracion,
+119 aprobadas, sin fallos, errores u omisiones. Oracle se mantiene.
+
+Comprobados: ingreso y cambio de clave, CRUD y busquedas de funcionarios y
+categorias, clave inicial igual al ID, CRUD y filtro de recursos, asignacion de
+reservas por categoria, rechazo completo sin disponibilidad, cancelacion futura,
+sockets y Proxy, clientes concurrentes, persistencia exclusiva del backend,
+transacciones, alertas asincronas a otros usuarios y descarte local confirmado.
+La comprobacion de confirmaciones y detalle emergente es por codigo; no equivale
+a una nueva ejecucion manual de todos los dialogos Swing.
+
+DOS CASOS ADICIONALES REPRODUCIDOS CON DATOS EN MEMORIA
+C. Permisos de consulta: un cliente autenticado como FUNCIONARIO pudo invocar
+   api.FuncionarioService.listarTodos mediante ServiceProxy y recibir el listado
+   administrativo. BackendServer verifica el rol ADMINISTRADOR para escrituras,
+   pero no para esa consulta. El enunciado reserva la funcionalidad de funcionarios
+   al administrador. La inclusion por ese mismo cliente si fue rechazada.
+D. Estado FINALIZADA: una actividad realizada conto 1 recurso reservado y 0
+   actividades en el mismo periodo. Tampoco aparecio en la celda de calendario.
+   EstadisticasActividadesService y las matrices filtran exclusivamente ACTIVA,
+   mientras EstadisticasRecursosService excluye solo CANCELADA. Si se usa el estado
+   FINALIZADA admitido por el modelo y Oracle, se omite parte del historial.
+
+Estos casos se suman al MVC parcial y al redondeo de minutos descritos abajo.
+No se modifico codigo de produccion en esta revision. Sigue pendiente comprobar
+la ejecucion entre dos computadoras, GitHub y el ZIP final.
+
+RECOMPROBACION AMPLIADA - 22 DE OCTUBRE DE 2026
+============================================
+
+VEREDICTO ACTUAL: no se certifica cumplimiento total. Esta recomprobacion
+precisa el alcance de la correccion MVC informada en la actualizacion anterior.
+
+COMPROBACIONES NUEVAS
+- IA real: interpretarSolicitud devolvio correctamente 2040-01-02, 10:30-11:00
+  y una categoria. Se uso una frase de prueba; no se guardo ninguna reserva.
+- PDF: se generaron y renderizaron 8 variantes con los metodos del proyecto:
+  funcionarios, categorias, recursos, reservas, calendarizacion, actividades y
+  dos estadisticas con imagenes de graficos. Se inspeccionaron las 10 paginas
+  resultantes. Evidencia temporal en target/revision-pdf; no es un ZIP de entrega.
+- La suite mas reciente ejecutada sigue siendo 77 pruebas unitarias y 42 de
+  integracion aprobadas. Esta recomprobacion no cambia codigo de produccion.
+
+HALLAZGOS PENDIENTES
+A. MVC: ReservaView y RecursoView ya estan separadas de sus controladores, pero
+   CalendarizacionRecursosPanel, ProgramacionActividadesPanel,
+   EstadisticasRecursosPanel y la clase anidada EstadisticasActividadesPanel
+   siguen registrando eventos e invocando servicios desde las propias vistas.
+   Falta extraer esos controladores para afirmar MVC en toda la presentacion.
+B. Minutos de IA: ReservaController.seleccionarHora redondea hacia abajo a
+   intervalos de 30 minutos. Reproduccion ejecutada con el metodo real:
+   entrada 10:45 -> formulario 10:30. El formulario no conserva fielmente un
+   horario extraido que no sea multiplo de media hora.
+
+ENTREGA Y COMPROBACIONES EXTERNAS
+- Hay cambios locales modificados y nuevos sin confirmar en Git. El conector
+  GitHub no devolvio archivos legibles del remoto; no se certifica su contenido.
+- No se encontro un ZIP de entrega en las carpetas del proyecto revisadas.
+- No se ha ejecutado entre dos computadoras fisicas de la misma red.
+- Oracle se conserva por autorizacion del profesor documentada en el proyecto.
+
+La actualizacion siguiente conserva el historial de las seis correcciones.
+
+ACTUALIZACION - 22 DE OCTUBRE DE 2026
+===================================
+
+Se corrigieron los seis hallazgos F1-F6 de la revision historica incluida abajo.
+Oracle se mantiene como persistencia; no se cambiaron el esquema ni los datos
+existentes. Las pruebas Oracle usan registros temporales IT y los limpian.
+
+1. ReservaService asigna en el backend el primer recurso libre de cada categoria
+   y guarda todo junto. Una seleccion antigua puede reasignarse a otro recurso.
+   Si faltan categorias, informa cuales y no guarda parcialmente. El frontend
+   envia categorias; las alertas contienen la asignacion real del servidor.
+2. Ambas matrices cubren 24 horas y detectan solapamiento con cada intervalo
+   horario, incluidos 10:30-11:00 y horarios fuera de la antigua franja. Si dos
+   reservas consecutivas ocupan partes de la misma hora, se muestran ambas.
+3. Cancelar consulta el inicio persistido y rechaza reservas ya iniciadas o pasadas,
+   aunque el cliente falsifique la fecha. La transicion a CANCELADA tambien valida.
+4. Los servicios de matrices resuelven el nombre del funcionario en el backend.
+5. EstadisticasActividadesService inicializa todas las semanas del periodo con
+   cero, incluidas semanas parciales y periodos que cruzan de un anio a otro.
+6. ReservaView y RecursoView construyen los controles, aplican Tema y presentan
+   dialogos. Sus controladores reciben las vistas y gestionan eventos y servicios;
+   ya no heredan JPanel. MainView compone los componentes de ambas pantallas.
+
+VERIFICACION ACTUAL
+- proyecto.ps1 pruebas: BUILD SUCCESS.
+- 77 pruebas unitarias + 42 de integracion = 119 aprobadas; cero fallos,
+  errores u omisiones. Son 20 casos adicionales frente a la revision anterior.
+- Casos nuevos: CorreccionesEnunciadoTest (13), VistasMvcTest (2),
+  SocketServicesIT (3 adicionales) y OracleRepositoryIT (2 adicionales).
+- OracleSocketIT ahora comprueba categorias sin activo preseleccionado, reserva
+  05:30-06:00, 24 filas, nombre real y semanas con cero actividades.
+- Interacciones Swing en EDT: guardar, modificar, buscar, seleccionar, eliminar,
+  reservar, cancelar y conservar formulario ante errores.
+- Renderizado de ambas vistas inspeccionado; auditoria estatica sin hallazgos.
+
+LIMITES: no se probo entre dos equipos fisicos, no se verifico una llamada real
+de IA ni cada reporte PDF, ni se publico GitHub o preparo el ZIP de entrega.
+Esta correccion cierra F1-F6; no certifica esas comprobaciones pendientes.
+
+REVISION HISTORICA (SUPERADA EN F1-F6) - 21 DE OCTUBRE DE 2026
+=============================================
+
+Alcance: enunciado EIF206 Programacion 3-2026-02-PROYECTO 2 y funciones
+heredadas del PROYECTO 1, porque el Proyecto 2 exige conservarlas.
+Oracle sustituye MySQL por la indicacion del profesor comunicada por Belen.
+El boton de IA no forma parte de esta revision, por peticion de Belen.
+
+VEREDICTO
+La migracion a Oracle y la arquitectura distribuida estan implementadas y
+verificadas localmente. No se certifica el cumplimiento total: hay diferencias
+funcionales reproducidas y una separacion MVC incompleta en algunos modulos.
+Esta revision no modifica el comportamiento de la aplicacion.
+
+EVIDENCIA EJECUTADA
+- proyecto.ps1 pruebas: BUILD SUCCESS; 62 pruebas unitarias y 37 de integracion,
+  99 en total, sin fallos ni errores. Incluye pruebas contra Oracle real y TCP.
+- El JAR frontend no contiene clases database/, repository/ ni server/.
+- Pruebas adicionales en memoria: target/ComplianceProbe.java. No modifican
+  los registros Oracle del usuario. Sus resultados se detallan abajo.
+- No se han probado dos computadoras fisicas en la misma red.
+- No se ha hecho una inspeccion manual completa de todos los dialogos/PDF.
+
+REQUISITOS DE LA ARQUITECTURA Y LA BASE DE DATOS
+1. Dos procesos independientes: implementado con Main y server.BackendMain.
+2. Backend sin interfaz: implementado; escucha sockets en un puerto configurable.
+3. Hilos y multiples clientes: implementado con hilos virtuales y sesiones por
+   conexion; probado con clientes TCP concurrentes en la misma computadora.
+4. Acceso exclusivo del backend a Oracle: implementado en database/ y repository/;
+   el frontend utiliza contratos api/ y client.ServiceProxy.
+5. Patron Proxy: implementado mediante java.lang.reflect.Proxy en ServiceProxy.
+6. Conexion remota configurable: server.host, server.port y server.bind; preparado,
+   pendiente de comprobar en otra computadora y con el firewall de esa red.
+7. Persistencia relacional: scripts database/01_schema.sql y 02_datos_xml.sql,
+   seis tablas P3_, claves primarias y foraneas, indices y restricciones.
+8. Integridad de operaciones: transacciones en reservas y cambios que afectan
+   multiples repositorios; pruebas de rollback y bloqueos de disponibilidad.
+9. JUnit Jupiter, Surefire y Failsafe: configurados y ejecutados correctamente.
+
+RUBRICA FUNCIONAL
+- Ingreso y cambio de clave: implementados y probados.
+- Funcionarios: busqueda, inclusion con clave inicial igual al ID, consulta,
+  modificacion y borrado implementados; operaciones probadas con Oracle.
+- Categorias: CRUD, busqueda e ID automatico implementados y probados.
+- Recursos: CRUD y filtrado por categoria implementados; CRUD probado con Oracle.
+- Reservas: implementadas, pero hay fallos F1 y F3 descritos abajo.
+- Calendarizacion: implementada, pero hay fallos F2 y F4.
+- Programacion de actividades: implementada, pero hay fallos F2 y F4.
+- Estadisticas y graficos: implementados, pero falta mostrar las semanas sin
+  actividades en el intervalo solicitado (F5).
+- Alertas: notificacion asincrona a otros usuarios autenticados, panel derecho
+  independiente de las pestanas, detalle emergente y descarte local confirmado.
+  El descarte no invoca operaciones de borrado en el backend. Las suscripciones
+  se retiran al cerrar la ventana/sesion. Probado el transporte y los estados
+  basicos del panel; la confirmacion se comprobo en el codigo.
+
+HALLAZGOS QUE DEBEN CORREGIRSE
+
+F1 - Disponibilidad con varios clientes (prioridad alta)
+Archivo: src/main/java/service/ReservaService.java, lineas 47-55;
+         src/main/java/controller/ReservaController.java, lineas 305-316.
+El cliente escoge un recurso antes de registrar la reserva. El servidor exige
+que ese recurso siga siendo el primero libre, en lugar de reasignar otro libre.
+Reproduccion: dos clientes consultan cuando R esta libre; hay R y R2 de la misma
+categoria. El primero registra R. El segundo envia su seleccion previa R y recibe
+"El recurso no esta disponible", aunque R2 sigue libre. Esto contradice el exito
+de la reserva cuando existe al menos una unidad disponible de cada categoria.
+Correccion requerida: asignar los recursos de las categorias en el backend,
+coordinando seleccion y guardado, y conservar el rechazo completo si falta alguna.
+
+F2 - Reservas que desaparecen de las matrices (prioridad alta)
+Archivos: src/main/java/service/CalendarizacionRecursosService.java, linea 62;
+          src/main/java/service/ProgramacionActividadesService.java, linea 70.
+La interfaz permite intervalos de 30 minutos, pero las matrices comprueban si la
+hora exacta de cada fila cae dentro de la reserva. Una reserva 10:30-11:00 no
+aparece ni en la fila 10:00 ni en la fila 11:00: ambas matrices devuelven cero
+celdas ocupadas aunque la reserva esta guardada.
+Ademas, las filas solo abarcan de 06:00 a 21:00, mientras el formulario permite
+horarios de todo el dia. Los horarios fuera de esa franja tampoco se muestran.
+Correccion requerida: representar el solapamiento con el intervalo de cada fila
+y abarcar todas las horas que permite reservar el formulario.
+
+F3 - Cancelacion de reservas pasadas (prioridad media)
+Archivo: src/main/java/service/ReservaService.java, linea 70.
+El Proyecto 1 especifica cancelar una reserva futura. eliminar() comprueba los
+campos y la existencia, pero no la fecha y hora de inicio persistidas.
+Reproduccion: una reserva del 1 de enero de 2020 se elimina sin rechazo.
+Correccion requerida: validar en el backend el inicio de la reserva guardada,
+antes de permitir la cancelacion; no confiar en la fecha enviada por el cliente.
+
+F4 - Falta el nombre del funcionario en las matrices (prioridad media)
+Archivos: src/main/java/service/CalendarizacionRecursosService.java, linea 71;
+          src/main/java/service/ProgramacionActividadesService.java, linea 73.
+El enunciado pide nombre de actividad y funcionario. Se concatena funcionarioId,
+por ejemplo "Actividad media hora - 456", en lugar del nombre del funcionario.
+Correccion requerida: resolver el nombre en el backend y devolverlo en la matriz.
+
+F5 - Semanas con cero actividades omitidas (prioridad media)
+Archivo: src/main/java/service/EstadisticasActividadesService.java, lineas 37-45.
+Solo se crean filas para semanas que contienen alguna reserva activa. En un
+periodo de tres semanas con actividad en una sola, se muestra una unica semana.
+El enunciado pide listar las semanas comprendidas en el periodo y su cantidad.
+Correccion requerida: inicializar todas las semanas del intervalo con cero.
+
+F6 - Separacion MVC parcial (observacion estructural)
+Archivos: src/main/java/controller/RecursoController.java, linea 20;
+          src/main/java/controller/ReservaController.java, linea 20.
+Ambos controladores heredan JPanel, construyen controles Swing y gestionan
+eventos en la misma clase. El Proyecto 2 exige MVC estricto para la presentacion.
+Hay capas de negocio/datos separadas, pero no puede certificarse separacion
+estricta vista/controlador en esos dos modulos. La solucion es extraer las vistas
+a view/ y conservar en controller/ el manejo de eventos y llamadas al Proxy.
+
+ENTREGA
+- Hay cambios locales sin confirmar en Git. No se ha verificado que el remoto
+  compartido de GitHub contenga esta version completa.
+- No se preparo ni verifico el ZIP final en esta revision. Debe incluir fuentes,
+  pom.xml y scripts SQL, excluyendo database.properties, claves API y target/.
+- El enunciado tambien requiere defensa y entrega por aula virtual; estas
+  acciones corresponden al equipo.
+
+FUENTES
+C:/Users/Belén/Downloads/EIF206 Programación 3-2026-02-PROYECTO 2.pdf
+C:/Users/Belén/Downloads/EIF206 Programación 3-2026-02-PROYECTO 1.pdf

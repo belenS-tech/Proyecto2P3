@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<categorias>
+    <categoria>
+        <id>CAT-000001</id>
+        <descripcion>Laptop Windows</descripcion>
+    </categoria>
+    <categoria>
+        <id>CAT-000002</id>
+        <descripcion>Sala de juntas</descripcion>
+    </categoria>
+    <categoria>
+        <id>CAT-000003</id>
+        <descripcion>Sala para 10 personas</descripcion>
+    </categoria>
+    <categoria>
+        <id>CAT-000004</id>
+        <descripcion>laptoppp</descripcion>
+    </categoria>
+    <categoria>
+        <id>CAT-000005</id>
+        <descripcion>sala de eventos</descripcion>
+    </categoria>
+</categorias>
