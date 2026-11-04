@@ -62,7 +62,7 @@ la primera de cada ID y se asignan RES-MIG-000003 y RES-MIG-000004 a las
 repetidas. El detalle está en database/migracion_ids.txt.
 Los XML originales se mantienen como respaldo. La aplicación usa JDBC,
 incluidos reportes, calendario, estadísticas y las categorías usadas por IA.
-Las clases XML se conservan para sus pruebas y para consultar el formato viejo.
+Los repositorios XML se conservan en src/test/java para probar el formato viejo.
 database/exportar_xml.py regenera la importación desde resources/data;
 regenerar ese archivo no sincroniza datos automáticamente con Oracle.
 

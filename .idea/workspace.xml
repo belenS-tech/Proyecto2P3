@@ -4,14 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86be5f71-3007-48e2-996e-8619840cfc77" name="Changes" comment="cambios en carpetas" />
+    <list default="true" id="86be5f71-3007-48e2-996e-8619840cfc77" name="Changes" comment="cambios en carpetas">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ORACLE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ORACLE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/CategoriaXmlRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/FuncionarioXmlRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/RecursoXmlRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/ReservaXmlRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/UsuarioXmlRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/funcionarios.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="196" />
+    <option name="cachedIndexableFilesCount" value="173" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,35 +32,35 @@
     &quot;assignee&quot;: &quot;belenS-tech&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/belenS-tech/Proyecto2P3.git",
-    "accountId": "9fc97eb9-5b32-480c-8301-2c906bda3d6d"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/belenS-tech/Proyecto2P3.git&quot;,
+    &quot;accountId&quot;: &quot;9fc97eb9-5b32-480c-8301-2c906bda3d6d&quot;
   }
-}]]></component>
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000248291325131" />
-      <entry key="MS500" value="1.1970869604506431" />
-      <entry key="S2" value="3.0530738435149662" />
-      <entry key="S5" value="5.347119988565189" />
-      <entry key="S10" value="6.828547506781406" />
-      <entry key="S30" value="8.179766732226028" />
-      <entry key="S60" value="8.576320662792098" />
-      <entry key="M2" value="8.784643990308172" />
-      <entry key="M5" value="8.912997022340925" />
-      <entry key="M10" value="8.956353670208246" />
-      <entry key="M15" value="8.970870154451486" />
-      <entry key="M30" value="8.985418904595011" />
-      <entry key="H1" value="8.992705404171723" />
-      <entry key="H2" value="8.9963516894327" />
-      <entry key="H4" value="8.998175591475302" />
-      <entry key="D1" value="8.99969589673358" />
-      <entry key="W1" value="8.999956555814615" />
+      <entry key="MS100" value="1.0000812311572675" />
+      <entry key="MS500" value="1.2445239402345856" />
+      <entry key="S2" value="3.1422630630333575" />
+      <entry key="S5" value="6.0075647633134555" />
+      <entry key="S10" value="8.23857288547595" />
+      <entry key="S30" value="10.513992565623651" />
+      <entry key="S60" value="11.222844113023623" />
+      <entry key="M2" value="11.60244006866542" />
+      <entry key="M5" value="11.838760703077206" />
+      <entry key="M10" value="11.919006037511405" />
+      <entry key="M15" value="11.945920462363304" />
+      <entry key="M30" value="11.972918353987998" />
+      <entry key="H1" value="11.986448689678806" />
+      <entry key="H2" value="11.993221720754923" />
+      <entry key="H4" value="11.99661020407416" />
+      <entry key="D1" value="11.999434942835162" />
+      <entry key="W1" value="11.999919275314658" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -73,23 +82,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.6198551187361613" />
-      <entry key="MS500" value="1.0276368476238422" />
-      <entry key="S2" value="2.7281904118596083" />
-      <entry key="S5" value="5.054704997023069" />
-      <entry key="S10" value="6.629468065261263" />
-      <entry key="S30" value="8.097385733799875" />
-      <entry key="S60" value="8.53278565977331" />
-      <entry key="M2" value="8.762261272288786" />
-      <entry key="M5" value="8.903892398732847" />
-      <entry key="M10" value="8.951775771689158" />
-      <entry key="M15" value="8.967812511424187" />
-      <entry key="M30" value="8.983887221530143" />
-      <entry key="H1" value="8.991938846084699" />
-      <entry key="H2" value="8.995968231104488" />
-      <entry key="H4" value="8.997983817471754" />
-      <entry key="D1" value="8.999663928170403" />
-      <entry key="W1" value="8.999951988724444" />
+      <entry key="MS100" value="1.0510725167309477E-4" />
+      <entry key="MS500" value="0.2950473179547473" />
+      <entry key="S2" value="2.418517085678287" />
+      <entry key="S5" value="5.490714373196251" />
+      <entry key="S10" value="7.895924952025819" />
+      <entry key="S30" value="10.371661468093563" />
+      <entry key="S60" value="11.14733526936554" />
+      <entry key="M2" value="11.563525587531593" />
+      <entry key="M5" value="11.822906407365092" />
+      <entry key="M10" value="11.911029939314181" />
+      <entry key="M15" value="11.940592120588917" />
+      <entry key="M30" value="11.970248695240498" />
+      <entry key="H1" value="11.985112485261574" />
+      <entry key="H2" value="11.992553274399876" />
+      <entry key="H4" value="11.99627589481179" />
+      <entry key="D1" value="11.999379212664442" />
+      <entry key="W1" value="11.999911313568736" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -125,6 +134,24 @@
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="ProyectoP3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -189,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793167256493</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="cambios en carpetas">
+      <option name="closed" value="true" />
+      <created>1793167308553</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1793167308554</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
