@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86be5f71-3007-48e2-996e-8619840cfc77" name="Changes" comment="cambios en carpetas">
+    <list default="true" id="86be5f71-3007-48e2-996e-8619840cfc77" name="Changes" comment="cambios en carpetase remueve xml ya que ahora usamos bases de datos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ORACLE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ORACLE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/CategoriaXmlRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/FuncionarioXmlRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/RecursoXmlRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/ReservaXmlRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/UsuarioXmlRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/funcionarios.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/REVISION_ENUNCIADO.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,23 +38,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000812311572675" />
-      <entry key="MS500" value="1.2445239402345856" />
-      <entry key="S2" value="3.1422630630333575" />
-      <entry key="S5" value="6.0075647633134555" />
-      <entry key="S10" value="8.23857288547595" />
-      <entry key="S30" value="10.513992565623651" />
-      <entry key="S60" value="11.222844113023623" />
-      <entry key="M2" value="11.60244006866542" />
-      <entry key="M5" value="11.838760703077206" />
-      <entry key="M10" value="11.919006037511405" />
-      <entry key="M15" value="11.945920462363304" />
-      <entry key="M30" value="11.972918353987998" />
-      <entry key="H1" value="11.986448689678806" />
-      <entry key="H2" value="11.993221720754923" />
-      <entry key="H4" value="11.99661020407416" />
-      <entry key="D1" value="11.999434942835162" />
-      <entry key="W1" value="11.999919275314658" />
+      <entry key="MS100" value="1.001011000902189" />
+      <entry key="MS500" value="1.2527610780801766" />
+      <entry key="S2" value="2.452658383096166" />
+      <entry key="S5" value="6.28597395784977" />
+      <entry key="S10" value="11.719772282977663" />
+      <entry key="S30" value="20.67613498313453" />
+      <entry key="S60" value="24.371722830684035" />
+      <entry key="M2" value="26.553871202029104" />
+      <entry key="M5" value="27.987645233841505" />
+      <entry key="M10" value="28.48797483688387" />
+      <entry key="M15" value="28.657335331449566" />
+      <entry key="M30" value="28.8280065787996" />
+      <entry key="H1" value="28.91383729970765" />
+      <entry key="H2" value="28.956877062321126" />
+      <entry key="H4" value="28.978428122990817" />
+      <entry key="D1" value="28.996403240626968" />
+      <entry key="W1" value="28.999486141794495" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -82,23 +76,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.0510725167309477E-4" />
-      <entry key="MS500" value="0.2950473179547473" />
-      <entry key="S2" value="2.418517085678287" />
-      <entry key="S5" value="5.490714373196251" />
-      <entry key="S10" value="7.895924952025819" />
-      <entry key="S30" value="10.371661468093563" />
-      <entry key="S60" value="11.14733526936554" />
-      <entry key="M2" value="11.563525587531593" />
-      <entry key="M5" value="11.822906407365092" />
-      <entry key="M10" value="11.911029939314181" />
-      <entry key="M15" value="11.940592120588917" />
-      <entry key="M30" value="11.970248695240498" />
-      <entry key="H1" value="11.985112485261574" />
-      <entry key="H2" value="11.992553274399876" />
-      <entry key="H4" value="11.99627589481179" />
-      <entry key="D1" value="11.999379212664442" />
-      <entry key="W1" value="11.999911313568736" />
+      <entry key="MS100" value="0.8836141613214528" />
+      <entry key="MS500" value="1.2229095846070877" />
+      <entry key="S2" value="2.4362830977773053" />
+      <entry key="S5" value="6.2260308647814595" />
+      <entry key="S10" value="11.604607670769221" />
+      <entry key="S30" value="20.57240089285005" />
+      <entry key="S60" value="24.30462902894688" />
+      <entry key="M2" value="26.515671830825415" />
+      <entry key="M5" value="27.971121235082553" />
+      <entry key="M10" value="28.479493900960772" />
+      <entry key="M15" value="28.65163183000913" />
+      <entry key="M30" value="28.82512982960409" />
+      <entry key="H1" value="28.912392632709544" />
+      <entry key="H2" value="28.95615315034503" />
+      <entry key="H4" value="28.978065771709545" />
+      <entry key="D1" value="28.996342793787626" />
+      <entry key="W1" value="28.999477505185034" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -224,7 +218,23 @@
       <option name="project" value="LOCAL" />
       <updated>1793167308554</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="cambios en carpetase remueve xml ya que ahora usamos bases de datos">
+      <option name="closed" value="true" />
+      <created>1793820158709</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1793820158709</updated>
+    </task>
+    <task id="LOCAL-00009" summary="cambios en carpetase remueve xml ya que ahora usamos bases de datos">
+      <option name="closed" value="true" />
+      <created>1793820176530</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1793820176530</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +246,7 @@
     <MESSAGE value="cambios y pruebas" />
     <MESSAGE value="beckend" />
     <MESSAGE value="cambios en carpetas" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios en carpetas" />
+    <MESSAGE value="cambios en carpetase remueve xml ya que ahora usamos bases de datos" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambios en carpetase remueve xml ya que ahora usamos bases de datos" />
   </component>
 </project>
