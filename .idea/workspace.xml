@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="86be5f71-3007-48e2-996e-8619840cfc77" name="Changes" comment="cambios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/ReservaJdbcRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/ReservaJdbcRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793855220291</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="cambios">
+      <option name="closed" value="true" />
+      <created>1794028168033</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1794028168034</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -7,25 +7,45 @@ import java.time.*;
 import java.util.*;
 
 public class ReservaJdbcRepository extends JdbcSupport implements ReservaRepository {
-    private static final String SELECT = "SELECT id,actividad,fecha,hora_inicio,hora_fin,funcionario_id,estado FROM p3_reservas";
+    private static final String SELECT = """
+            SELECT v.id, v.actividad, v.fecha, v.hora_inicio, v.hora_fin, v.funcionario_id, v.estado,
+                   c.id categoria_id, c.descripcion categoria_descripcion,
+                   r.id recurso_id, r.descripcion recurso_descripcion
+            FROM p3_reservas v
+            LEFT JOIN p3_detalles d ON d.reserva_id = v.id
+            LEFT JOIN p3_recursos r ON r.id = d.recurso_id
+            LEFT JOIN p3_categorias c ON c.id = r.categoria_id
+            """;
+    private static final String ORDEN = " ORDER BY v.fecha, v.hora_inicio, v.id, r.id";
 
-    public List<Reserva> listar() { return consultar(" ORDER BY fecha,hora_inicio,id"); }
-    public Reserva buscarPorId(String id) { return first(consultar(" WHERE id=?",id)); }
+    public List<Reserva> listar() { return consultar(""); }
+    public Reserva buscarPorId(String id) { return first(consultar(" WHERE v.id = ?", id)); }
 
     private List<Reserva> consultar(String where, Object... values) {
         return Database.use(c -> {
-            List<Reserva> reservas = query(SELECT + where, r -> new Reserva(r.getString("id"),r.getString("actividad"),
-                    r.getDate("fecha").toLocalDate(),LocalTime.parse(r.getString("hora_inicio")),
-                    LocalTime.parse(r.getString("hora_fin")),r.getString("funcionario_id"),EstadoReserva.valueOf(r.getString("estado"))),values);
-            for (Reserva reserva : reservas) {
-                reserva.setDetalles(query("SELECT c.id,c.descripcion,r.id recurso_id,r.descripcion recurso_descripcion "
-                        + "FROM p3_detalles d JOIN p3_recursos r ON r.id=d.recurso_id "
-                        + "JOIN p3_categorias c ON c.id=r.categoria_id WHERE d.reserva_id=? ORDER BY r.id", r -> {
-                    CategoriaRecurso cat = new CategoriaRecurso(r.getString("id"),r.getString("descripcion"));
-                    return new DetalleReserva(cat,new Recurso(r.getString("recurso_id"),cat,r.getString("recurso_descripcion")));
-                },reserva.getId()));
+            try (var consulta = c.prepareStatement(SELECT + where + ORDEN)) {
+                for (int i = 0; i < values.length; i++) consulta.setObject(i + 1, values[i]);
+                try (var filas = consulta.executeQuery()) {
+                    List<Reserva> reservas = new ArrayList<>();
+                    Reserva reserva = null;
+                    while (filas.next()) {
+                        String id = filas.getString("id");
+                        if (reserva == null || !reserva.getId().equals(id)) {
+                            reserva = new Reserva(id, filas.getString("actividad"), filas.getDate("fecha").toLocalDate(),
+                                    LocalTime.parse(filas.getString("hora_inicio")), LocalTime.parse(filas.getString("hora_fin")),
+                                    filas.getString("funcionario_id"), EstadoReserva.valueOf(filas.getString("estado")));
+                            reservas.add(reserva);
+                        }
+                        String recursoId = filas.getString("recurso_id");
+                        if (recursoId != null) {
+                            var categoria = new CategoriaRecurso(filas.getString("categoria_id"), filas.getString("categoria_descripcion"));
+                            var recurso = new Recurso(recursoId, categoria, filas.getString("recurso_descripcion"));
+                            reserva.getDetalles().add(new DetalleReserva(categoria, recurso));
+                        }
+                    }
+                    return reservas;
+                }
             }
-            return reservas;
         });
     }
 
