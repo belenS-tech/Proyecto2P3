@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86be5f71-3007-48e2-996e-8619840cfc77" name="Changes" comment="cambios en carpetase remueve xml ya que ahora usamos bases de datos">
+    <list default="true" id="86be5f71-3007-48e2-996e-8619840cfc77" name="Changes" comment="cambios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REVISION_ENUNCIADO.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,23 +37,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.001011000902189" />
-      <entry key="MS500" value="1.2527610780801766" />
-      <entry key="S2" value="2.452658383096166" />
-      <entry key="S5" value="6.28597395784977" />
-      <entry key="S10" value="11.719772282977663" />
-      <entry key="S30" value="20.67613498313453" />
-      <entry key="S60" value="24.371722830684035" />
-      <entry key="M2" value="26.553871202029104" />
-      <entry key="M5" value="27.987645233841505" />
-      <entry key="M10" value="28.48797483688387" />
-      <entry key="M15" value="28.657335331449566" />
-      <entry key="M30" value="28.8280065787996" />
-      <entry key="H1" value="28.91383729970765" />
-      <entry key="H2" value="28.956877062321126" />
-      <entry key="H4" value="28.978428122990817" />
-      <entry key="D1" value="28.996403240626968" />
-      <entry key="W1" value="28.999486141794495" />
+      <entry key="MS100" value="1.0106829790991125" />
+      <entry key="MS500" value="1.5052646999538006" />
+      <entry key="S2" value="2.954563293112376" />
+      <entry key="S5" value="6.740340417929363" />
+      <entry key="S10" value="12.199579286087952" />
+      <entry key="S30" value="21.36558410230799" />
+      <entry key="S60" value="25.188001469202284" />
+      <entry key="M2" value="27.453596343626277" />
+      <entry key="M5" value="28.945321567342173" />
+      <entry key="M10" value="29.46642654816616" />
+      <entry key="M15" value="29.642882580455126" />
+      <entry key="M30" value="29.82073624921928" />
+      <entry key="H1" value="29.910191081897477" />
+      <entry key="H2" value="29.95505118205728" />
+      <entry key="H4" value="29.97751448900364" />
+      <entry key="D1" value="29.99625087184067" />
+      <entry key="W1" value="29.99946437246173" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -76,23 +75,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.8836141613214528" />
-      <entry key="MS500" value="1.2229095846070877" />
-      <entry key="S2" value="2.4362830977773053" />
-      <entry key="S5" value="6.2260308647814595" />
-      <entry key="S10" value="11.604607670769221" />
-      <entry key="S30" value="20.57240089285005" />
-      <entry key="S60" value="24.30462902894688" />
-      <entry key="M2" value="26.515671830825415" />
-      <entry key="M5" value="27.971121235082553" />
-      <entry key="M10" value="28.479493900960772" />
-      <entry key="M15" value="28.65163183000913" />
-      <entry key="M30" value="28.82512982960409" />
-      <entry key="H1" value="28.912392632709544" />
-      <entry key="H2" value="28.95615315034503" />
-      <entry key="H4" value="28.978065771709545" />
-      <entry key="D1" value="28.996342793787626" />
-      <entry key="W1" value="28.999477505185034" />
+      <entry key="MS100" value="0.020102287285607597" />
+      <entry key="MS500" value="0.8965458489595935" />
+      <entry key="S2" value="2.7384298008837957" />
+      <entry key="S5" value="6.598798740251067" />
+      <entry key="S10" value="12.045140431938998" />
+      <entry key="S30" value="21.248388300347514" />
+      <entry key="S60" value="25.1138751405457" />
+      <entry key="M2" value="27.411764943739065" />
+      <entry key="M5" value="28.927310329841312" />
+      <entry key="M10" value="29.457195627760694" />
+      <entry key="M15" value="29.636677625563344" />
+      <entry key="M30" value="29.817608028780146" />
+      <entry key="H1" value="29.9086204907544" />
+      <entry key="H2" value="29.954264260576277" />
+      <entry key="H4" value="29.977120621073954" />
+      <entry key="D1" value="29.996185170571152" />
+      <entry key="W1" value="29.999454985178804" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -234,7 +233,23 @@
       <option name="project" value="LOCAL" />
       <updated>1793820176530</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="cambios">
+      <option name="closed" value="true" />
+      <created>1793855158662</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1793855158662</updated>
+    </task>
+    <task id="LOCAL-00011" summary="cambios">
+      <option name="closed" value="true" />
+      <created>1793855220291</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1793855220291</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +262,7 @@
     <MESSAGE value="beckend" />
     <MESSAGE value="cambios en carpetas" />
     <MESSAGE value="cambios en carpetase remueve xml ya que ahora usamos bases de datos" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios en carpetase remueve xml ya que ahora usamos bases de datos" />
+    <MESSAGE value="cambios" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambios" />
   </component>
 </project>
