@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86be5f71-3007-48e2-996e-8619840cfc77" name="Changes" comment="cambios">
+    <list default="true" id="86be5f71-3007-48e2-996e-8619840cfc77" name="Changes" comment="medir tiempo que dura iniciando sesion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/ReservaJdbcRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/ReservaJdbcRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DISTRIBUIDO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DISTRIBUIDO.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,23 +38,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0106829790991125" />
-      <entry key="MS500" value="1.5052646999538006" />
-      <entry key="S2" value="2.954563293112376" />
-      <entry key="S5" value="6.740340417929363" />
-      <entry key="S10" value="12.199579286087952" />
-      <entry key="S30" value="21.36558410230799" />
-      <entry key="S60" value="25.188001469202284" />
-      <entry key="M2" value="27.453596343626277" />
-      <entry key="M5" value="28.945321567342173" />
-      <entry key="M10" value="29.46642654816616" />
-      <entry key="M15" value="29.642882580455126" />
-      <entry key="M30" value="29.82073624921928" />
-      <entry key="H1" value="29.910191081897477" />
-      <entry key="H2" value="29.95505118205728" />
-      <entry key="H4" value="29.97751448900364" />
-      <entry key="D1" value="29.99625087184067" />
-      <entry key="W1" value="29.99946437246173" />
+      <entry key="MS100" value="1.000140896318524" />
+      <entry key="MS500" value="1.2341306360789357" />
+      <entry key="S2" value="2.8173160635066425" />
+      <entry key="S5" value="5.586400549168138" />
+      <entry key="S10" value="8.33729635082418" />
+      <entry key="S30" value="11.622785892286512" />
+      <entry key="S60" value="12.735228755226629" />
+      <entry key="M2" value="13.347216031532959" />
+      <entry key="M5" value="13.733805436024891" />
+      <entry key="M10" value="13.86603992781465" />
+      <entry key="M15" value="13.91050035296552" />
+      <entry key="M30" value="13.955153408254304" />
+      <entry key="H1" value="13.9775524552523" />
+      <entry key="H2" value="13.988771767229846" />
+      <entry key="H4" value="14.00133109194815" />
+      <entry key="D1" value="21.433352993709022" />
+      <entry key="W1" value="38.5790078609828" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -76,23 +76,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.020102287285607597" />
-      <entry key="MS500" value="0.8965458489595935" />
-      <entry key="S2" value="2.7384298008837957" />
-      <entry key="S5" value="6.598798740251067" />
-      <entry key="S10" value="12.045140431938998" />
-      <entry key="S30" value="21.248388300347514" />
-      <entry key="S60" value="25.1138751405457" />
-      <entry key="M2" value="27.411764943739065" />
-      <entry key="M5" value="28.927310329841312" />
-      <entry key="M10" value="29.457195627760694" />
-      <entry key="M15" value="29.636677625563344" />
-      <entry key="M30" value="29.817608028780146" />
-      <entry key="H1" value="29.9086204907544" />
-      <entry key="H2" value="29.954264260576277" />
-      <entry key="H4" value="29.977120621073954" />
-      <entry key="D1" value="29.996185170571152" />
-      <entry key="W1" value="29.999454985178804" />
+      <entry key="MS100" value="2.6722192582056604E-4" />
+      <entry key="MS500" value="0.39914441355859953" />
+      <entry key="S2" value="2.447904064264578" />
+      <entry key="S5" value="5.408882006454832" />
+      <entry key="S10" value="8.238466539633205" />
+      <entry key="S30" value="11.586139432295083" />
+      <entry key="S60" value="12.716288871540458" />
+      <entry key="M2" value="13.337576838932922" />
+      <entry key="M5" value="13.729907021924374" />
+      <entry key="M10" value="13.864083413175257" />
+      <entry key="M15" value="13.909194371970393" />
+      <entry key="M30" value="13.954499595277037" />
+      <entry key="H1" value="13.977225342479272" />
+      <entry key="H2" value="13.988608159146652" />
+      <entry key="H4" value="14.001249183721587" />
+      <entry key="D1" value="21.43332307231263" />
+      <entry key="W1" value="38.57899822147722" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -258,7 +258,31 @@
       <option name="project" value="LOCAL" />
       <updated>1794028168034</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="medir tiempo que dura iniciando sesion">
+      <option name="closed" value="true" />
+      <created>1794029045349</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1794029045349</updated>
+    </task>
+    <task id="LOCAL-00014" summary="medir tiempo que dura iniciando sesion">
+      <option name="closed" value="true" />
+      <created>1794029123564</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1794029123564</updated>
+    </task>
+    <task id="LOCAL-00015" summary="medir tiempo que dura iniciando sesion">
+      <option name="closed" value="true" />
+      <created>1794029136794</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1794029136794</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,6 +296,7 @@
     <MESSAGE value="cambios en carpetas" />
     <MESSAGE value="cambios en carpetase remueve xml ya que ahora usamos bases de datos" />
     <MESSAGE value="cambios" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios" />
+    <MESSAGE value="medir tiempo que dura iniciando sesion" />
+    <option name="LAST_COMMIT_MESSAGE" value="medir tiempo que dura iniciando sesion" />
   </component>
 </project>

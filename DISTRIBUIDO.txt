@@ -1,6 +1,5 @@
 EJECUTAR EL PROYECTO 2
 =====================
-Se mantiene Oracle XE por indicación del profesor (sustituye MySQL del PDF).
 Requiere JDK 21 y Maven; proyecto.ps1 detecta el JDK 21 local y Maven de IntelliJ.
 
 1. Abrir dos terminales PowerShell en la carpeta que contiene pom.xml.
@@ -29,7 +28,7 @@ Reemplazar esa IP por la dirección real del equipo servidor.
 Con IntelliJ usar opciones de VM: -Dserver.host=192.168.1.10 -Dserver.port=5050
 El puerto puede cambiarse con -Puerto en ambos comandos.
 
-ESTRUCTURA PARA EXPLICAR EL PROYECTO
+ESTRUCTURA DEL PROYECTO
 - api: contratos compartidos de los servicios.
 - client.ServiceProxy: patrón Proxy dinámico; representa cada servicio remoto.
 - client.Services: composición del frontend, sin referencias a JDBC ni Oracle.
